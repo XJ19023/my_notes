@@ -1,0 +1,62 @@
+\documentclass[fontset=windows]{article}
+\usepackage{ctex}
+
+
+\title{学习笔记}
+\author{xj}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{GIT}
+\begin{enumerate}
+    \item git init //
+    \item git add  //每次修改完都需要添加
+    \item git commit -m "xxxx"
+    \item git log //--pretty=oneline 减少输出信息
+    \item git reset --hard HEAD\^{} //回退到上一个版本，HEAD\^{}\^{}上上个版本，HEAD\~{}100前100个版本
+    \item git reset --hard [id]  //id为版本号
+    \item git diff 
+    \item git rm -r --cached . //撤销所有add
+
+\end{enumerate}
+
+\subsection{远程仓库}
+\begin{enumerate}
+    \item git remote add <name> git@server-name:path/repo-name.git //关联远程库
+    \item git remote rm <name> //删除远程连接
+    \item git remote -v //查看远程连接
+    \item git push origin master //提交到远程库，第一次-u
+\end{enumerate}
+
+\subsection{分支}
+\begin{enumerate}
+    \item git switch -c dev //创建并切换到分支dev
+    \item git switch master //切换到已有分支master
+    \item git branch //查看分支
+    \item git merge <name> //合并某分支到当前分支
+    \item git branch -d <name> //删除分支
+\end{enumerate}
+
+\subsection{标签}
+\begin{enumerate}
+    \item git tag //查看tag
+    \item git show <tag> //显示tag信息
+    \item git tag -a <tag> -m "message" //创建tag
+    \item git push origin <tag> //共享tag
+    \item git tag -d <tag> //删除本地tag
+    \item git push origin :refs/tags/<tag> //删除远程tag
+    \item git fetch origin tag <tag> //拉取指定tag的版本
+\end{enumerate}
+
+\subsection{报错}
+\begin{enumerate}
+    \item git config core.autocrlf false // CRLF will be replaced by LF ...
+\end{enumerate}
+
+
+\section{\LaTeX}
+
+\end{document}
