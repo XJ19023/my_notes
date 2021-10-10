@@ -1,16 +1,29 @@
 \documentclass[fontset=windows]{article}
-\usepackage{ctex}
+\usepackage{ctex} %中文
+\usepackage{graphicx} %插图
+\usepackage{amsmath} %数学公式
+\usepackage{syntonly}
+\usepackage{hyperref} %目录超链接
 
-
+\syntaxonly %不生成pdf，仅检查语法，编译速度更快
 \title{学习笔记}
 \author{xj}
 \date{\today}
 
 \begin{document}
-
+\graphicspath{{figures/}} %指定图片路径
 \maketitle
+\tableofcontents %目录
+\clearpage
 
-\section{GIT}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{美女.png}
+\caption{这是一个美女}
+\label{fig:beauty} %必须放在caption后面
+\end{figure}
+\clearpage  %分页 
+\section{GIT} \label{sec:GIT}
 \begin{enumerate}
     \item git init //
     \item git add  //每次修改完都需要添加
@@ -23,7 +36,7 @@
 
 \end{enumerate}
 
-\subsection{远程仓库}
+\subsection{远程仓库}\label{sec:remote_repo}
 \begin{enumerate}
     \item git remote add <name> git@server-name:path/repo-name.git //关联远程库
     \item git remote rm <name> //删除远程连接
@@ -31,7 +44,7 @@
     \item git push origin master //提交到远程库，第一次-u
 \end{enumerate}
 
-\subsection{分支}
+\subsection{分支}\label{branch}
 \begin{enumerate}
     \item git switch -c dev //创建并切换到分支dev
     \item git switch master //切换到已有分支master
@@ -40,7 +53,7 @@
     \item git branch -d <name> //删除分支
 \end{enumerate}
 
-\subsection{标签}
+\subsection{标签}\label{sec:tag}
 \begin{enumerate}
     \item git tag //查看tag
     \item git show <tag> //显示tag信息
@@ -51,12 +64,29 @@
     \item git fetch origin tag <tag> //拉取指定tag的版本
 \end{enumerate}
 
-\subsection{报错}
+\subsection{报错}\label{sec:error}
 \begin{enumerate}
     \item git config core.autocrlf false // CRLF will be replaced by LF ...
 \end{enumerate}
 
 
-\section{\LaTeX}
+\section{\LaTeX}\label{sec:latex}
+表格
+\begin{tabular}{|c|c|} %c:center, l:left, r:right
+    \hline
+    a & b \\
+    \hline
+    c & d \\
+    \hline
+\end{tabular}
+\\
+\\
+公式
+
+\verb|\(| \(x=a+b\) \verb|\)| //行间公式 \\
+\verb|\[| \[x=a+b \text{\qquad//行间公式}\] \verb|\]| 
+\begin{equation}
+    \phi
+\end{equation}
 
 \end{document}
