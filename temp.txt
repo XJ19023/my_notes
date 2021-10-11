@@ -1,0 +1,142 @@
+{
+    "explorer.confirmDelete": false,
+    "files.autoSave": "afterDelay",
+    "workbench.iconTheme": "vscode-icons",
+    "git.enabled": false,
+    "verilog.linting.linter": "xvlog",
+    "editor.renderIndentGuides": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "vsicons.dontShowNewVersionMessage": true,
+
+    //latex envirionment
+"latex-workshop.showContextMenu":true,        //右键菜单
+"latex-workshop.intellisense.package.enabled": true, //根据加载的包，自动完成命令或包 
+"latex-workshop.latex.autoBuild.run": "never",    //禁止保存文件时自动build 
+"latex-workshop.latex.outDir": "%DIR%/build",
+"latex-workshop.latex.recipes": [ 
+  { 
+    "name": "xelatex", 
+    "tools": [ 
+     "xelatex" 
+    ] 
+   },
+  { 
+    "name": "xelatex -> bibtex -> xelatex", 
+    "tools": [ 
+     "xelatex", 
+     "bibtex", 
+     "xelatex", 
+    ] 
+   },
+ { 
+  "name": "latexmk", 
+  "tools": [ 
+   "latexmk" 
+  ] 
+ }, 
+ { 
+  "name": "PDFlatex", 
+  "tools": [ 
+   "pdflatex" 
+  ] 
+ }, 
+ { 
+  "name": "pdflatex ->žž bibtex ->žž pdflatex2", 
+  "tools": [ 
+   "pdflatex", 
+   "bibtex", 
+   "pdflatex", 
+   "pdflatex" 
+  ] 
+ }
+], 
+"latex-workshop.latex.tools":[ 
+ { 
+  "name": "latexmk", 
+  "command": "latexmk", 
+  "args": [ 
+   "-synctex=1", 
+   "-interaction=nonstopmode", 
+   "-file-line-error", 
+   "-pdf", 
+   "-outdir=%OUTDIR%", 
+   "%DOC%" 
+  ], 
+  "env": {} 
+  }, 
+  { 
+  "name": "pdflatex", 
+  "command": "pdflatex", 
+  "args": [ 
+   "-synctex=1", 
+   "-interaction=nonstopmode", 
+   "-file-line-error", 
+   "%DOC%" 
+  ], 
+  "env": {} 
+  }, 
+  { 
+  "name": "xelatex", 
+  "command": "xelatex", 
+  "args": [ 
+   "-synctex=1", 
+   "-interaction=nonstopmode", 
+   "-file-line-error", 
+   "%DOC%" 
+  ], 
+  "env": {} 
+  }, 
+  { 
+  "name": "bibtex", 
+  "command": "bibtex", 
+  "args": [ 
+   "%DOCFILE%" 
+  ], 
+  "env": {} 
+  } 
+], 
+"latex-workshop.latex.clean.fileTypes": [ //设定清理文件的类型 
+ "*.aux", 
+ "*.bbl", 
+ "*.blg", 
+ "*.idx", 
+ "*.ind", 
+ "*.lof", 
+ "*.lot", 
+ "*.out", 
+ "*.toc", 
+ "*.acn", 
+ "*.acr", 
+ "*.alg", 
+ "*.glg", 
+ "*.glo", 
+ "*.gls", 
+ "*.ist", 
+ "*.fls", 
+ "*.log", 
+ "*.fdb_latexmk", 
+ "*.nav", 
+ "*.snm", 
+ "*.synctex.gz" 
+], 
+// 设置预览方式
+"latex-workshop.view.pdf.viewer":"external",
+"latex-workshop.view.pdf.ref.viewer":"external",
+// 设置外部PDF预览器
+"latex-workshop.view.pdf.external.viewer.command": "C:/Users/X1/AppData/Local/SumatraPDF/SumatraPDF.exe",
+"latex-workshop.view.pdf.external.viewer.args": [
+  "%PDF%"
+],
+// 配置Syntex的正向搜索(这是官网的)
+"latex-workshop.view.pdf.external.synctex.command": "C:/Users/X1/AppData/Local/SumatraPDF/SumatraPDF.exe",
+"latex-workshop.view.pdf.external.synctex.args": [
+  "-forward-search",
+  "%TEX%",
+  "%LINE%",
+  "-reuse-instance",
+  "-inverse-search",
+  "C:/Users/X1/AppData/Local/Programs/Microsoft VS Code/resources/app/out/cli.js -r -g %f:%l",
+  "%PDF%"
+],
+"security.workspace.trust.untrustedFiles": "open"
+}

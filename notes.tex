@@ -5,7 +5,7 @@
 \usepackage{syntonly}
 \usepackage{hyperref} %目录超链接
 
-\syntaxonly %不生成pdf，仅检查语法，编译速度更快
+%\syntaxonly %不生成pdf，仅检查语法，编译速度更快
 \title{学习笔记}
 \author{xj}
 \date{\today}
@@ -48,9 +48,10 @@
 \begin{enumerate}
     \item git switch -c dev //创建并切换到分支dev
     \item git switch master //切换到已有分支master
-    \item git branch //查看分支
+    \item git branch -a //查看分支
     \item git merge <name> //合并某分支到当前分支
-    \item git branch -d <name> //删除分支
+    \item git branch -d <name> //删除本地分支
+    \item git push origin -{}-delete <name> //删除遠程分支
 \end{enumerate}
 
 \subsection{标签}\label{sec:tag}
